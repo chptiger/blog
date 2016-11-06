@@ -13,7 +13,7 @@
 		<h1>Blog</h1>
 		<h2>Welcome to Blog Admin System</h2>
 		<div class="form">
-			<p style="color:red">Username not correct</p>
+			<p style="color:red">user name not correct</p>
 			<form action="#" method="post">
 				<ul>
 					<li>
@@ -27,14 +27,16 @@
 					<li>
 						<input type="text" class="code" name="code"/>
 						<span><i class="fa fa-check-square-o"></i></span>
-						<img src="#" alt="">
+						{{--<img src="/blog/admin/code" alt="">--}}
+						<img src="{{url('/admin/code')}}" alt="" onclick="this.src='{{url('/admin/code')}}?'+Math.random()">
+
 					</li>
 					<li>
-						<input type="submit" value="立即登陆"/>
+						<input type="submit" value="Login"/>
 					</li>
 				</ul>
 			</form>
-			<p><a href="#">return Home</a> &copy; 2016 Powered by Thomas Xu
+			<p><a href="#"> Home</a> &copy; 2016 Powered by Thomas Xu
 		</div>
 	</div>
 </body>
