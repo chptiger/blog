@@ -15,8 +15,11 @@ Route::group(['middleware'=>['web']], function(){
         return view('welcome');
     });
 
-    Route::get('admin/login','Admin\LoginController@login');
-    Route::get('admin/code','Admin\LoginController@code');
-    Route::get('admin/getcode','Admin\LoginController@getcode');
+    // login page
+    Route::any('admin/login','Admin\LoginController@login');
+    Route::get('admin/code','Admin\LoginController@code');//  verification code
+    Route::get('admin/getcode','Admin\LoginController@getcode'); // check verification code
+    Route::get('admin/crypt','Admin\LoginController@crypt');
+
 });
 
