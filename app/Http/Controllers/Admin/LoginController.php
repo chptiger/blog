@@ -22,9 +22,11 @@ class LoginController extends CommonController
                 return back()->with('msg','Wrong User name or Password');
             }
             session(['user'=>$user]);
-            dd(session('user'));
-            echo "OK";
+//            dd(session('user'));
+//            echo "OK";
+            return redirect("admin/index");
         }else{
+//            dd($_SERVER);
             return view('admin.login');
         }
     }

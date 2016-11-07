@@ -23,5 +23,6 @@ Route::group(['middleware'=>['web']], function(){
 
     // index page
     Route::any('admin/index','Admin\IndexController@index');
+    Route::any('admin/info','Admin\IndexController@info');
 });
 
