@@ -27,10 +27,15 @@ class LoginController extends CommonController
             return redirect("admin/index");
         }else{
 //            dd($_SERVER);
+//            session(['user'=>null]);
             return view('admin.login');
         }
     }
 
+    public function logout(){
+        session(['user'=>null]);
+        return redirect("admin/login");
+    }
     public function code(){
         $code = new \Code;
         $code->make();

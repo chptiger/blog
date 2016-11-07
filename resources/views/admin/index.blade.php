@@ -13,7 +13,7 @@
 			<ul>
 				<li>Admin：admin</li>
 				<li><a href="pass.html" target="main">Password</a></li>
-				<li><a href="#">Exit</a></li>
+				<li><a href="{{url('admin/logout')}}">Logout</a></li>
 			</ul>
 		</div>
 	</div>
