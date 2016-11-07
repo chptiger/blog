@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Input;
+use App\Http\Model\User;
 
 require_once 'resources\org\code\Code.class.php';
 class LoginController extends CommonController
@@ -16,11 +17,16 @@ class LoginController extends CommonController
             if(strtoupper($input['code']) != $_code){
                 return back()->with('msg','Wrong Verification Code');
             }
-            echo "ok";
+            $user = User::first();
+            if($user->user_name != $input['user_name'] || Crypt::decrypt($user->user_pass)!= $input['user_pass']){
+                return back()->with('msg','Wrong User name or Password');
+            }
+            session(['user'=>$user]);
+            dd(session('user'));
+            echo "OK";
         }else{
-
+            return view('admin.login');
         }
-        return view('admin.login');
     }
 
     public function code(){

@@ -21,5 +21,7 @@ Route::group(['middleware'=>['web']], function(){
     Route::get('admin/getcode','Admin\LoginController@getcode'); // check verification code
     Route::get('admin/crypt','Admin\LoginController@crypt');
 
+    // index page
+    Route::any('admin/index','Admin\IndexController@index');
 });
 
