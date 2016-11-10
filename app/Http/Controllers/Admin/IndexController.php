@@ -34,16 +34,18 @@ class IndexController extends CommonController
                 'password.between'=>'new password should between 6 and 20 characters!',
                 'password.confirmed'=>'The password confirmation does not match!',
             ];
-            $validator = Validator::make($input, $rules,$message);
+            $validator = Validator::make($input, $rules, $message);
             if($validator->passes()){
                 $user = User::first();
-                $_passowrd = Crypt::decrypt($user->user_pass);
-                if( $input['password_o'] == $_passowrd){
+                $_password = Crypt::decrypt($user->user_pass);
+//                dd($_password) ;
+                if( $input['password_o'] == $_password){
                     $user->user_pass = Crypt::encrypt( $input['password']);
                     $user->update();
                     return redirect('admin/info');
                 }else{
-                    return back()->with('error','Original Wrong Password!');
+//                    dd($_password);
+                    return back()->with('errors','Original Wrong Password!');
                 }
             }else{
 //                dd($validator->errors()->all());

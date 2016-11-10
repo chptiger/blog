@@ -13,9 +13,13 @@
         <h3>Change Password</h3>
             @if(count($errors)>0)
             <div class="mark">
-                @foreach($errors->all() as $error)
-                    {{$error}}
-                @endforeach
+                @if(is_object($errors))
+                    @foreach($errors->all() as $error)
+                        {{$error}}
+                    @endforeach
+                @else
+                 <p>{{$errors}}</p>
+                @endif
             </div>
             @endif
     </div>
@@ -30,7 +34,7 @@
             <tr>
                 <th width="120"><i class="require">*</i>Original：</th>
                 <td>
-                    <input type="password" name="password_o"> </i>Please input new Password</span>
+                    <input type="password" name="password_o"> </i>Please input Original Password</span>
                 </td>
             </tr>
             <tr>
