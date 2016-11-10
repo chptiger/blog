@@ -24,8 +24,9 @@ Route::group(['middleware'=>['web'], 'prefix'=>'admin', 'namespace'=>'Admin'], f
 
 Route::group(['middleware'=>['web','admin.login'], 'prefix'=>'admin', 'namespace'=>'Admin'], function(){
     // index page
-    Route::any('index','IndexController@index');
-    Route::any('info','IndexController@info');
-    Route::any('logout','LoginController@logout');
+    Route::get('index','IndexController@index');
+    Route::get('info','IndexController@info');
+    Route::get('logout','LoginController@logout');
+    Route::any('pass','IndexController@pass'); // get && post method
 });
 

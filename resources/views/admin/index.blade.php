@@ -12,7 +12,7 @@
 		<div class="top_right">
 			<ul>
 				<li>Admin：admin</li>
-				<li><a href="pass.html" target="main">Password</a></li>
+				<li><a href="{{url('admin/pass')}}">Password</a></li>
 				<li><a href="{{url('admin/logout')}}">Logout</a></li>
 			</ul>
 		</div>
@@ -57,7 +57,11 @@
 	</div>
 	<!--content end-->
 
-
+	<!--foot start-->
+	<div class="bottom_box">
+		CopyRight © 2016. Powered By <a href="https://github.com/chptiger">Thomas Xu</a>.
+	</div>
+	<!--foot end-->
 @endsection
 
 

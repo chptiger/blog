@@ -11,9 +11,5 @@
 <body>
 @yield('content')
 </body>
-<!--foot start-->
-<div class="bottom_box">
-    CopyRight © 2016. Powered By <a href="https://github.com/chptiger">Thomas Xu</a>.
-</div>
-<!--foot end-->
+
 </html>

@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-{{--	<link rel="stylesheet" href="../resources/views/admin/style/css/ch-ui.admin.css">
-	<link rel="stylesheet" href="../resources/views/admin/style/font/css/font-awesome.min.css">--}}
-
-	<link rel="stylesheet" href="{{asset("/resources/views/admin/style/css/ch-ui.admin.css")}}">
-	<link rel="stylesheet" href="{{asset("/resources/views/admin/style/font/css/font-awesome.min.css")}}">
-</head>
-<body style="background:#F3F3F4;">
+@extends('layouts.admin')
+@section('content')
 	<div class="login_box">
 		<h1>Blog</h1>
 		<h2>Welcome to Blog Admin System</h2>
@@ -42,5 +33,4 @@
 			<p><a href="#"> Home</a> &copy; 2016 Powered by Thomas Xu
 		</div>
 	</div>
-</body>
-</html>
+@endsection
